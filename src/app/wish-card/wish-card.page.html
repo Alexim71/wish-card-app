@@ -1,17 +1,57 @@
 <ion-content class="ion-padding" fullscreen>
-  <div class="card-container">
-    <div class="wish-card animate__animated animate__zoomIn">
-      <h1 class="title">🎉 Joyeux Anniversaire 🎉</h1>
-      <p class="message">Que cette journée soit remplie de bonheur et de belles surprises 🎂✨</p>
+  <div class="book-container" >
+    <div class="book" [ngClass]="{ 'open': isTurn }" (click)="toggleOpen()">
+     
 
-      <ion-button expand="block" color="primary" (click)="shareWish()">
-        Partager ce souhait
-      </ion-button>
+        <!-- <div class="page left" src="../../../src/assets/couverture.png" *ngIf="isOpen">
+        
+        <div class="cover-title" >
+          🎁 Ouvre-moi 🎁
+        </div>
+      </div>   -->
+      
 
-      <!-- ✅ Ajout du nom de la société -->
-      <div class="company-signature">
-        <p>✨ Carte offerte par <span class="company-name">#AllenFamily</span> ✨</p>
+       
+<!-- <div class="page left" *ngIf="!isOpen">
+  <div class="cover">
+    <img src="assets/couverture.png" />
+    <div class="cover-title">🎁 Ouvre-moi 🎁</div>
+  </div>
+</div> -->
+
+<!-- <div class="page left" *ngIf="!isOpen">
+  <div class="cover">
+    <img src="assets/couverture.png" alt="Couverture" class="cover-img" />
+    <div class="cover-title">🎁 Ouvre-moi 🎁</div>
+  </div>
+</div> -->
+
+<img src="assets/couverture.png" alt="Couverture" class="cover-img" />
+
+  
+
+      
+       <div class="page left2" *ngIf="!isOpen">
+        <!-- Quand ouverte -->
+        <div class="left-inside" >
+          <h2 class="company-name">✨ SmartSCHOOL ✨</h2>
+          <p class="slogan">Apprenez partout, partagez avec tous 🌍</p>
+        </div>
+      </div>                          
+
+
+      <div class="page right">
+        <div class="wish-content">
+          <h1>🎉 Joyeux Anniversaire 🎉</h1>
+          <p>
+            Que cette journée soit remplie de bonheur et de belles surprises 🎂✨
+          </p>
+          <ion-button expand="block" color="button" (click)="shareWish(); $event.stopPropagation()">
+            Partager ce souhait
+          </ion-button>
+        </div>
       </div>
+
     </div>
   </div>
 </ion-content>
